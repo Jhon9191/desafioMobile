@@ -8,6 +8,8 @@ import {
   ThirdImage,
   Avaliation,
   TextAvaliation,
+  TextHeader,
+  TextDescription
 } from '.';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -21,6 +23,7 @@ type HeaderProps = {
   cardTwo: String;
   cardThree: String;
   description: String;
+  title: String;
 }
 
 type firstCardProps = {
@@ -64,9 +67,10 @@ function ThirdCard({ cardThree }: thirdCardProps) {
 }
 
 
-export default function Header({ star, cardOne, cardTwo, cardThree, description }: HeaderProps) {
+export default function Header({ title,star, cardOne, cardTwo, cardThree, description }: HeaderProps) {
   return (
     <View>
+      <TextHeader>{title}</TextHeader>
       <View style={styles.header}>
         <Card cardOne={cardOne} />
         <SecondCard cardTwo={cardTwo} />
@@ -131,8 +135,8 @@ export default function Header({ star, cardOne, cardTwo, cardThree, description 
           )}
         </View>
       </Avaliation>
-      <View style={{ width: '60%' }}>
-        <Text style={{ color: 'white', left: 15, marginTop: 15 }}>{description}</Text>
+      <View style={{ width: '85%' }}>
+        <TextDescription >{description}</TextDescription>
         <TouchableOpacity >
           <Text style={{ color: 'red', marginLeft: 15, marginTop: 5 }}>Ver mais</Text>
         </TouchableOpacity>
@@ -153,12 +157,12 @@ const styles = StyleSheet.create({
 
   linear: {
     width: 170,
-    height: 50,
-    borderRadius: 30,
+    height: 66,
+    borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
     position: 'absolute',
-    marginTop: '70%',
+    marginTop: '60%',
   },
 
   avatar: {

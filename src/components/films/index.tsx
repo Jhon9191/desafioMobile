@@ -2,9 +2,8 @@ import styled from 'styled-components/native';
 
 export const Background = styled.View`
     flex: 1;
-    align-items: center;
-    justify-content: center;
     background-color: #000;
+    flex-direction: row;
 `
 export const FirstImage = styled.Image`
     width: 170px;
@@ -24,6 +23,11 @@ export const ThirdImage = styled.Image`
     border-radius: 15px;
     border: 2px;
 `
+export const TextHeader = styled.Text`
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 30px;
+`
 
 export const Text = styled.Text`
     color: #fff;
@@ -35,7 +39,7 @@ export const Avaliation = styled.View`
     height: 60px; 
     background-color: black;
     position: absolute; 
-    margin-top: 110px; 
+    margin-top: 165px; 
     left: 140px;
     border: 2px; 
     border-color: red;
@@ -47,4 +51,32 @@ export const Avaliation = styled.View`
 export const TextAvaliation = styled.Text`
     color: white;
     font-size: 14px;
+`
+export const TextDescription = styled.Text`
+    color: white;
+    font-size: 12px;
+    margin-top: 20px;
+    left: 15px;
+`
+
+export const FirstView = styled.View`
+    width: 10%;
+    height: 100%;
+    /* background-color: red; */
+    justify-content: center;
+    align-items: center;
+`
+
+export const SecondView = styled.View`
+    width: 90%;
+    height: 100%;
+    /* background-color: blue; */
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px;
+    padding-right: 30px;
+`
+
+export const ListInLine = styled.FlatList`
+    flex-direction: row;
 `
