@@ -128,6 +128,13 @@ export default function Splash() {
         height: principalBackX
     }
 
+    const navigateToHome = () => {
+        navigation.dispatch(CommonActions.reset({
+            index: 0,
+            routes: [{name: 'Home'}]
+        }))
+    }
+
     return (
         <SafeAreaView style={[styles.container,{backgroundColor: '#000'}]}>
 
@@ -136,7 +143,7 @@ export default function Splash() {
                     <View style={[styles.image, styles.form]}>
                         <Input placeholderTextColor="#ADACAC" placeholder="E-mail" />
                         <Input placeholderTextColor="#ADACAC" placeholder="Senha" />
-                        <Button ><Text>Entrar</Text></Button>
+                        <Button onPress={navigateToHome}><Text>Entrar</Text></Button>
                         <View style={{ flexDirection: 'row' }}>
                             <Checkbox
                                 style={{ marginBottom: 3 }}

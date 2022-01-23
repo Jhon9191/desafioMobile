@@ -8,14 +8,14 @@ enableScreens();
 const Stack = createNativeStackNavigator();
 
 import Splash from '../src/screens/splash';
-import Login from '../src/screens/login';
+import Home from '../src/screens/Home';
 
 export default function App() {
   return (
     <NavigationContainer >
-      <Stack.Navigator initialRouteName="Splash" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Home" screenOptions={{headerShown: false}}>
         <Stack.Screen name="Splash" component={Splash}/>
-        <Stack.Screen name="Login" component={Login}/>
+        <Stack.Screen name="Home" component={Home}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
