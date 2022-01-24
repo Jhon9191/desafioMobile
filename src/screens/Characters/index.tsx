@@ -1,7 +1,7 @@
-import { View, StyleSheet, Text } from 'react-native';
-import React, { useState, useContext, useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+import React, { useContext } from 'react';
 import {
-  Background, FirstView, SecondImage, SecondView,
+  Background, FirstView, SecondView,
 } from '../../components/films';
 import Header from '../../components/films/HeaderFilms';
 import HeaderButttonNavigation from '../../components/films/HeaderButttonNavigation';
@@ -53,7 +53,7 @@ export default function Characters() {
           <>
             <Header
               title="Top 10 - Filmes Populares"
-              star={5}
+              star={4}
               cardOne={headerFilms2[0]}
               cardTwo={headerFilms2[1]}
               cardThree={headerFilms2[2]}
@@ -71,7 +71,7 @@ export default function Characters() {
           <>
             <Header
               title="Top 10 - HQs Populares"
-              star={5}
+              star={3}
               cardOne={headerFilms3[0]}
               cardTwo={headerFilms3[1]}
               cardThree={headerFilms3[2]}

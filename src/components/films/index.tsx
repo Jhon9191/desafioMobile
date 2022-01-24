@@ -8,7 +8,7 @@ export const Background = styled.View`
 export const FirstImage = styled.Image`
     width: 170px;
     height: 170px;
-    border-radius: 30px;
+    border-radius: 25px;
     border: 2px solid red;
 `
 export const SecondImage = styled.Image`
@@ -26,7 +26,7 @@ export const ThirdImage = styled.Image`
 export const TextHeader = styled.Text`
     color: #fff;
     font-size: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 `
 export const TextSubtitle = styled.Text`
     color: #fff;
@@ -59,14 +59,14 @@ export const TextAvaliation = styled.Text`
 `
 export const TextDescription = styled.Text`
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     margin-top: 20px;
     left: 15px;
 `
 
 export const TextTitleModal = styled.Text`
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 `
 
@@ -84,8 +84,8 @@ export const SecondView = styled.View`
     /* background-color: blue; */
     justify-content: space-evenly;
     flex-direction: column;
-    padding: 30px;
-    padding-right: 30px;
+    /* padding: 30px; */
+    padding-left: 5px;
 `
 
 export const ListInLine = styled.FlatList`

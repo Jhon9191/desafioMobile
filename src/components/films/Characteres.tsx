@@ -22,7 +22,7 @@ export default function Characters({ data }: ApparitionsProps) {
                 {active == "Films" && (<TextSubtitle style={{ marginBottom: 0 }}>Filmes:</TextSubtitle>)}
                 {active == "Comics" && (<TextSubtitle style={{ marginBottom: 0 }}>Quadrinhos:</TextSubtitle>)}
                 <TouchableOpacity onPress={openModal} style={{ flexDirection: 'row' }}>
-                    <FontAwesome name="plus" size={18} color="white" style={{bottom: 3}} />
+                    <FontAwesome name="plus" size={18} color="white" style={{ bottom: 3 }} />
                     <TextSubtitle style={{ marginBottom: 0, marginStart: 5 }}>Ver mais</TextSubtitle>
                 </TouchableOpacity>
             </View>

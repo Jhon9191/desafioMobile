@@ -1,7 +1,7 @@
 import React, { useState, createContext, useEffect } from "react";
 export const Context = createContext({});
 
-export default function ContextProvider({ children } : any) {
+export default function ContextProvider({ children }: any) {
 
     const [active, setActive] = useState("Characters");
 
@@ -60,8 +60,8 @@ export default function ContextProvider({ children } : any) {
         { key: 3, name: "Home Aranha", url: "https://ovicio.com.br/wp-content/uploads/2021/12/20211214-ovicio-homem-aranha-marvel-sony-filme-730x365.jpg" },
     ]);
 
-    const [ activeModal, setActiveModal] = useState(false);
-    const [ dataModal, setDataModal] = useState([]);
+    const [activeModal, setActiveModal] = useState(false);
+    const [dataModal, setDataModal] = useState([]);
 
     return (
         <Context.Provider value={{

@@ -5,7 +5,7 @@ import { Context } from "../../Context/Context";
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { FontAwesome5 } from '@expo/vector-icons'; 
+import { FontAwesome5 } from '@expo/vector-icons';
 
 export default function Login() {
 
@@ -65,9 +65,9 @@ export default function Login() {
 
     <Modal visible={activeModal}>
       <View style={styles.modal}>
-        <View style={[styles.modal, { marginTop: 50, width: '100%', }]}>
-          <View style={{ width: '80%' }}>
-            <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center'}}>
+        <View style={[styles.modal, { marginTop: 50, width: '100%' }]}>
+          <View style={{ width: '80%'}}>
+            <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
 
               <TouchableOpacity onPress={closeModal}>
                 <MaterialCommunityIcons style={{ marginRight: 5 }} name="keyboard-backspace" size={24} color="red" />
@@ -126,8 +126,8 @@ const styles = StyleSheet.create({
   containerFilm: {
     backgroundColor: '#1b6e65',
     borderRadius: 30,
-    width: 161,
-    height: 244,
+    width: 150,
+    height: 230,
     margin: 10,
     alignItems: 'center',
     justifyContent: 'center'

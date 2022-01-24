@@ -15,7 +15,7 @@ export default function App() {
   return (
     <NavigationContainer >
       <ContextProvider>
-        <Stack.Navigator initialRouteName="Characters" screenOptions={{ headerShown: false }}>
+        <Stack.Navigator initialRouteName="Splash" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Splash" component={Splash} />
           <Stack.Screen name="Characters" component={Characters} />
         </Stack.Navigator>

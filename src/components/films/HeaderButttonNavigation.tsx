@@ -4,27 +4,27 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation, CommonActions } from '@react-navigation/core';
 import { Context } from '../../Context/Context';
 export default function HeaderButttonNavigation() {
- 
-const {active, setActive} : any = useContext(Context);
 
-const navigateToCharacters = () =>{
-    setActive("Characters");
-} 
+    const { active, setActive }: any = useContext(Context);
 
-const navigateToFilms = () =>{
-    setActive("Films");
-} 
+    const navigateToCharacters = () => {
+        setActive("Characters");
+    }
 
-const navigateToComics = () =>{
-    setActive("Comics");
-} 
+    const navigateToFilms = () => {
+        setActive("Films");
+    }
+
+    const navigateToComics = () => {
+        setActive("Comics");
+    }
 
 
     return (
         <View style={styles.container}>
 
             <TouchableOpacity onPress={navigateToCharacters}>
-                <LinearGradient colors={['rgba(0, 0, 0, 0.5)', 'red']} style={[styles.linear, {opacity: `${active}` == "Characters" ? 1 : 0.3}]}>
+                <LinearGradient colors={['transparent', 'red']} style={[styles.linear, { opacity: `${active}` == "Characters" ? 1 : 0.3 }]}>
                     <View style={styles.ViewLinear}>
                         <Text style={{ color: 'white', fontSize: 12 }} >Personagens</Text>
                     </View>
@@ -32,7 +32,7 @@ const navigateToComics = () =>{
             </TouchableOpacity>
 
             <TouchableOpacity onPress={navigateToFilms}>
-                <LinearGradient colors={['rgba(0, 0, 0, 0.5)', 'red']} style={[styles.linear, , {opacity: `${active}` == "Films" ? 1 : 0.3}]}>
+                <LinearGradient colors={['rgba(0, 0, 0, 0.5)', 'red']} style={[styles.linear, , { opacity: `${active}` == "Films" ? 1 : 0.3 }]}>
                     <View style={styles.ViewLinear}>
                         <Text style={{ color: 'white', fontSize: 12 }} >Filmes</Text>
                     </View>
@@ -40,7 +40,7 @@ const navigateToComics = () =>{
             </TouchableOpacity>
 
             <TouchableOpacity onPress={navigateToComics}>
-                <LinearGradient colors={['rgba(0, 0, 0, 0.5)', 'red']} style={[styles.linear, , {opacity: `${active}` == "Comics" ? 1 : 0.3}]}>
+                <LinearGradient colors={['rgba(0, 0, 0, 0.5)', 'red']} style={[styles.linear, , { opacity: `${active}` == "Comics" ? 1 : 0.3 }]}>
                     <View style={styles.ViewLinear}>
                         <Text style={{ color: 'white', fontSize: 12 }} >Quadrinhos</Text>
                     </View>
@@ -52,12 +52,12 @@ const navigateToComics = () =>{
 }
 
 const styles = StyleSheet.create({
-    container:{
-        transform: [{ rotate: '90deg' }], 
+    container: {
+        transform: [{ rotate: '90deg' }],
         flexDirection: 'row',
         marginTop: 150
     },
-    ViewLinear:{
+    ViewLinear: {
         width: 100,
         height: 50,
         transform: [{ rotate: '90deg' }],
@@ -73,6 +73,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 15,
-        margin: 27
+        margin: 25
     },
 })  

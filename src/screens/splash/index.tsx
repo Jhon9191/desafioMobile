@@ -1,4 +1,4 @@
-import { View,Image, Animated, ImageBackground, SafeAreaView, StyleSheet, Dimensions } from 'react-native';
+import { View, Image, Animated, ImageBackground, SafeAreaView, StyleSheet, Dimensions } from 'react-native';
 import React, { useEffect, useState } from 'react';
 import { useNavigation, CommonActions } from '@react-navigation/core';
 import { Button, Input, Text, TextRed, TextCheck } from '../../components/input';
@@ -52,7 +52,7 @@ export default function Splash() {
             { scaleX: scale },
             { scaleY: scale },
         ],
-        backgroundColor: 'red',
+        // backgroundColor: 'red',
         width: 100,
         height: 70,
         paddingTop: 30,
@@ -131,12 +131,12 @@ export default function Splash() {
     const navigateToHome = () => {
         navigation.dispatch(CommonActions.reset({
             index: 0,
-            routes: [{name: 'Characters'}]
+            routes: [{ name: 'Characters' }]
         }))
     }
 
     return (
-        <SafeAreaView style={[styles.container,{backgroundColor: '#000'}]}>
+        <SafeAreaView style={[styles.container, { backgroundColor: '#000' }]}>
 
             <>
                 <Animated.View style={form}>
@@ -174,7 +174,7 @@ export default function Splash() {
 
             <>
                 <Animated.View style={def}>
-                    <Image source={logo}  resizeMode='stretch'  style={{width: '100%', height: '100%'}}/>
+                    <Image source={logo} resizeMode='stretch' style={{ width: '100%', height: '100%' }} />
                 </Animated.View>
             </>
         </SafeAreaView >
