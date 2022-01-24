@@ -28,6 +28,11 @@ export const TextHeader = styled.Text`
     font-size: 20px;
     margin-bottom: 30px;
 `
+export const TextSubtitle = styled.Text`
+    color: #fff;
+    font-size: 14px;
+    margin-bottom: 10px;
+`
 
 export const Text = styled.Text`
     color: #fff;
@@ -71,7 +76,7 @@ export const SecondView = styled.View`
     width: 90%;
     height: 100%;
     /* background-color: blue; */
-    justify-content: space-between;
+    justify-content: space-evenly;
     flex-direction: column;
     padding: 30px;
     padding-right: 30px;
@@ -79,4 +84,11 @@ export const SecondView = styled.View`
 
 export const ListInLine = styled.FlatList`
     flex-direction: row;
+`
+
+export const CharactersView = styled.Image`
+    width: 130px;
+    height: 70px;
+    border-radius: 20px;
+    border: 2px;
 `

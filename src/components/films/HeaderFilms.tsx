@@ -13,7 +13,6 @@ import {
 } from '.';
 import { LinearGradient } from 'expo-linear-gradient';
 
-const firtBackground = require('../../assets/wanda.jpg');
 const fullstar = require('../../assets/startfull.png');
 const starempty = require('../../assets/starempty.png');
 
@@ -24,10 +23,12 @@ type HeaderProps = {
   cardThree: String;
   description: String;
   title: String;
+  name: String;
 }
 
 type firstCardProps = {
   cardOne: String;
+  name: String;
 }
 
 type secondCardProps = {
@@ -39,12 +40,12 @@ type thirdCardProps = {
 }
 
 
-function Card({ cardOne }: firstCardProps) {
+function Card({ cardOne, name }: firstCardProps) {
   return (
     <View style={{ margin: 3 }}>
-      <FirstImage source={cardOne} />
+      <FirstImage source={{ uri: cardOne }} />
       <LinearGradient colors={['rgba(255, 255, 255, 0)', 'red']} style={styles.linear}>
-        <Text>Wanda Maxmoff</Text>
+        <Text>{name}</Text>
       </LinearGradient>
     </View>
   )
@@ -52,7 +53,7 @@ function Card({ cardOne }: firstCardProps) {
 function SecondCard({ cardTwo }: secondCardProps) {
   return (
     <View style={{ margin: 3 }}>
-      <SecondImage source={cardTwo} />
+      <SecondImage source={{ uri: cardTwo }} />
       <View style={{ borderRadius: 20, width: 70, height: 70, opacity: 0.5, backgroundColor: "#000", position: "absolute" }}></View>
     </View>
   )
@@ -60,19 +61,19 @@ function SecondCard({ cardTwo }: secondCardProps) {
 function ThirdCard({ cardThree }: thirdCardProps) {
   return (
     <View style={{ margin: 3 }}>
-      <ThirdImage source={cardThree} />
+      <ThirdImage source={{ uri: cardThree }} />
       <View style={{ borderRadius: 15, width: 50, height: 50, opacity: 0.5, backgroundColor: "#000", position: "absolute" }}></View>
     </View>
   )
 }
 
 
-export default function Header({ title,star, cardOne, cardTwo, cardThree, description }: HeaderProps) {
+export default function Header({ name, title, star, cardOne, cardTwo, cardThree, description }: HeaderProps) {
   return (
     <View>
       <TextHeader>{title}</TextHeader>
       <View style={styles.header}>
-        <Card cardOne={cardOne} />
+        <Card cardOne={cardOne} name={name} />
         <SecondCard cardTwo={cardTwo} />
         <ThirdCard cardThree={cardThree} />
       </View>
@@ -157,7 +158,7 @@ const styles = StyleSheet.create({
 
   linear: {
     width: 170,
-    height: 66,
+    height: 69,
     borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
