@@ -2,7 +2,7 @@ import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import React, { useContext } from 'react';
 import { CharactersView, ListInLine, TextSubtitle } from '.';
 import { Context } from '../../Context/Context';
-import Modal from '../../screens/Modal';
+import Modal from '../Modal/index';
 import { FontAwesome } from '@expo/vector-icons';
 type ApparitionsProps = {
     data: String[];
@@ -13,7 +13,6 @@ export default function Characters({ data }: ApparitionsProps) {
 
     const openModal = (data: any) => {
         setActiveModal(!activeModal);
-        setDataModal(data);
     }
     return (
         <View style={{ left: 15 }}>
@@ -21,7 +20,7 @@ export default function Characters({ data }: ApparitionsProps) {
                 {active == "Characters" && (<TextSubtitle style={{ marginBottom: 0 }}>Personagens:</TextSubtitle>)}
                 {active == "Films" && (<TextSubtitle style={{ marginBottom: 0 }}>Filmes:</TextSubtitle>)}
                 {active == "Comics" && (<TextSubtitle style={{ marginBottom: 0 }}>Quadrinhos:</TextSubtitle>)}
-                <TouchableOpacity onPress={openModal} style={{ flexDirection: 'row' }}>
+                <TouchableOpacity onPress={openModal} style={{ flexDirection: 'row', right: 20 }}>
                     <FontAwesome name="plus" size={18} color="white" style={{ bottom: 3 }} />
                     <TextSubtitle style={{ marginBottom: 0, marginStart: 5 }}>Ver mais</TextSubtitle>
                 </TouchableOpacity>
@@ -38,7 +37,7 @@ export default function Characters({ data }: ApparitionsProps) {
                     </View>
                 ))}
             />
-            <Modal />
+            <Modal/>
         </View>
     );
 }

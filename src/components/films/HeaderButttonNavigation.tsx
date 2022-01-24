@@ -10,11 +10,9 @@ export default function HeaderButttonNavigation() {
     const navigateToCharacters = () => {
         setActive("Characters");
     }
-
     const navigateToFilms = () => {
         setActive("Films");
     }
-
     const navigateToComics = () => {
         setActive("Comics");
     }

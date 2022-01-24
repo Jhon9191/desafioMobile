@@ -1,21 +1,24 @@
 import React, { useState, useEffect, useContext } from "react"
-import { Animated, FlatList, Text, View, StyleSheet, Modal, TouchableOpacity } from 'react-native';
-import { TextTitleModal } from "../../components/films";
+import { Animated, FlatList, Text, View, ImageBackground, StyleSheet, Modal, TouchableOpacity, Image } from 'react-native';
+import { TextTitleModal } from "../films";
 import { Context } from "../../Context/Context";
-
+import { LinearGradient } from 'expo-linear-gradient';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { FontAwesome5 } from '@expo/vector-icons';
 
-export default function Login() {
+export default function ModalComponent({ data }: any) {
 
-  const { activeModal, setActiveModal, dataModal, active }: any = useContext(Context);
-  const [films] = useState([
-    { key: 1, name: "homem de ferro 1" },
-    { key: 2, name: "homem de ferro 2" },
-    { key: 3, name: "homem de ferro 3" },
-    { key: 4, name: "homem de ferro 4" }
-  ]);
+  const {
+    activeModal,
+    setActiveModal,
+    setDataModal,
+    dataModal,
+    active,
+    charactersFilms,
+    charactersFilms2,
+    charactersFilms3
+  }: any = useContext(Context);
 
   const [posx] = useState(new Animated.Value(-300));
   const [posy] = useState(new Animated.Value(-300));
@@ -54,6 +57,16 @@ export default function Login() {
   ]);
 
   useEffect(() => {
+    if (active == "Characters") {
+      setDataModal(charactersFilms)
+    } else if (active == "Films") {
+      setDataModal(charactersFilms2)
+    } else {
+      setDataModal(charactersFilms3)
+    }
+  }, [active]);
+
+  useEffect(() => {
     animation.start();
   }, []);
 
@@ -61,12 +74,14 @@ export default function Login() {
     setActiveModal(!activeModal);
   }
 
+
+
   return (
 
     <Modal visible={activeModal}>
       <View style={styles.modal}>
         <View style={[styles.modal, { marginTop: 50, width: '100%' }]}>
-          <View style={{ width: '80%'}}>
+          <View style={{ width: '80%' }}>
             <View style={{ flexDirection: 'row', justifyContent: 'flex-start', alignItems: 'center' }}>
 
               <TouchableOpacity onPress={closeModal}>
@@ -94,11 +109,14 @@ export default function Login() {
 
           </View>
           <FlatList
-            data={films}
+            data={dataModal}
             keyExtractor={(item) => String(item.key)}
             renderItem={({ item }) => (
               <View style={styles.containerFilm}>
-                <Text>{item.name}</Text>
+                <Image source={{ uri: item.url}} style={{width: '100%', height: '100%', borderRadius:30}}/>
+                <LinearGradient colors={['red', 'transparent']} style={styles.linear}>
+                  <Text style={{color: 'white'}}>{item.name}</Text>
+                </LinearGradient>
               </View>
             )}
             numColumns={2}
@@ -117,6 +135,16 @@ export default function Login() {
 }
 
 const styles = StyleSheet.create({
+
+  linear: {
+    width: 150,
+    height: 69,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    top: '70%' 
+  },
   modal: {
     backgroundColor: '#000',
     flex: 1,
@@ -129,7 +157,6 @@ const styles = StyleSheet.create({
     width: 150,
     height: 230,
     margin: 10,
-    alignItems: 'center',
-    justifyContent: 'center'
+    alignItems: 'center'
   },
 })
