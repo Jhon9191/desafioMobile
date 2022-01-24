@@ -1,9 +1,12 @@
 import { StatusBar } from "expo-status-bar"
-import React, { useState, useEffect } from "react"
-import { Animated, FlatList, Text, View, StyleSheet, Button, Image, SafeAreaView } from 'react-native';
+import React, { useState, useEffect, useContext } from "react"
+import { Animated, FlatList, Text, View, StyleSheet, Modal, Image, SafeAreaView } from 'react-native';
+import { Background } from "../../components/films";
+import { Context } from "../../Context/Context";
 
 export default function Login() {
 
+  const { activeModal, dataModal }:any = useContext(Context);
   const [films] = useState([
     { key: 1, name: "homem de ferro 1" },
     { key: 2, name: "homem de ferro 2" },
@@ -52,10 +55,10 @@ export default function Login() {
   }, []);
 
   return (
-    <SafeAreaView style={styles.container}>
 
-      <View style={{ flex: 1, alignItems: 'center',
-    justifyContent: 'center', paddingTop: 40 }}>
+    <Modal visible={activeModal}>
+      <View style={styles.modal}>
+
         <FlatList
           data={films}
           keyExtractor={(item) => String(item.key)}
@@ -67,21 +70,21 @@ export default function Login() {
           numColumns={2}
         />
       </View>
+    </Modal>
 
-      {/* <View style={styles.logo}></View>
-       <View style={styles.logo}></View>
-       <View style={styles.logo}></View>
+    //  <View style={styles.logo}></View>
+    //  <View style={styles.logo}></View>
+    //  <View style={styles.logo}></View>
 
-        <Animated.View style={def}></Animated.View> */}
-    </SafeAreaView>
+    //   <Animated.View style={def}></Animated.View> 
+
   )
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center'
+  modal: {
+    backgroundColor: '#000',
+    flex: 1, justifyContent: 'center', alignItems: 'center'
   },
   containerFilm: {
     backgroundColor: '#102220',

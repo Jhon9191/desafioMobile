@@ -10,7 +10,6 @@ import Apparitions from '../../components/films/Apparitions';
 import CharactersComponent from '../../components/films/Characteres';
 export default function Characters() {
 
-  const [aparicoes, setAparicoes] = useState();
   const {
     active,
     headerFilms,

@@ -2,6 +2,8 @@ import { View,Text, FlatList, StyleSheet } from 'react-native';
 import React, { useContext } from 'react';
 import { ListInLine, SecondImage, TextSubtitle } from '.';
 import { Context } from '../../Context/Context';
+import Modal from '../../screens/Modal';
+
 type ApparitionsProps = {
     data: String[];
 }

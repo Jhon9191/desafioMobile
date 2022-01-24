@@ -60,6 +60,9 @@ export default function ContextProvider({ children } : any) {
         { key: 3, name: "Home Aranha", url: "https://ovicio.com.br/wp-content/uploads/2021/12/20211214-ovicio-homem-aranha-marvel-sony-filme-730x365.jpg" },
     ]);
 
+    const [ activeModal, setActiveModal] = useState(false);
+    const [ dataModal, setDataModal] = useState([]);
+
     return (
         <Context.Provider value={{
             active,
@@ -73,6 +76,10 @@ export default function ContextProvider({ children } : any) {
             aparitionsFilms3,
             headerFilms3,
             charactersFilms3,
+            activeModal,
+            setActiveModal,
+            dataModal,
+            setDataModal
         }}>
             {children}
         </Context.Provider>
