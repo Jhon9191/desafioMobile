@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 
-export const Background = styled.View`
+export const Background = styled.SafeAreaView`
     flex: 1;
     background-color: #000;
-    flex-direction: row;
+    flex-direction: column;
 `
 export const FirstImage = styled.Image`
     width: 170px;
@@ -69,18 +69,21 @@ export const TextTitleModal = styled.Text`
     font-size: 16px;
     font-weight: bold;
 `
+export const HeaderView = styled.View`
+    width: 100%;
+    height: 10%;
+` 
 
 export const FirstView = styled.View`
     width: 10%;
-    height: 100%;
-    /* background-color: red; */
-    justify-content: center;
+    height: 90%;
+    justify-content: space-evenly;
     align-items: center;
 `
 
 export const SecondView = styled.View`
     width: 90%;
-    height: 100%;
+    height: 90%;
     /* background-color: blue; */
     justify-content: space-evenly;
     flex-direction: column;

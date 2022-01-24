@@ -1,13 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, TouchableOpacity, View, Alert } from 'react-native';
 import React, { useContext } from 'react';
 import {
-  Background, FirstView, SecondView,
+  Background, FirstView, SecondView, HeaderView
 } from '../../components/films';
 import Header from '../../components/films/HeaderFilms';
 import HeaderButttonNavigation from '../../components/films/HeaderButttonNavigation';
 import { Context } from '../../Context/Context';
 import Apparitions from '../../components/films/Apparitions';
 import CharactersComponent from '../../components/films/Characteres';
+import { Entypo } from '@expo/vector-icons';
+
 export default function Characters() {
 
   const {
@@ -26,66 +28,73 @@ export default function Characters() {
 
   return (
     <Background >
-      <FirstView>
-        <HeaderButttonNavigation />
-      </FirstView>
-      <SecondView>
+      <HeaderView>
+        <TouchableOpacity onPress={()=>Alert.alert("oi")}>
+          <Entypo name="menu" size={24} color="red" style={{ top: 25, margin: 24 }} />
+        </TouchableOpacity>
+      </HeaderView>
+      <View style={{ flexDirection: 'row', height: '90%' }}>
+        <FirstView>
+          <HeaderButttonNavigation />
+        </FirstView>
+        <SecondView>
 
-        {active === "Characters" && (
-          <>
-            <Header
-              title="Top 10 - Personagens Populares"
-              star={5}
-              cardOne={headerFilms[0]}
-              cardTwo={headerFilms[1]}
-              cardThree={headerFilms[2]}
-              description="Wanda Maximoff foi sequestrada
+          {active === "Characters" && (
+            <>
+              <Header
+                title="Top 10 - Personagens Populares"
+                star={5}
+                cardOne={headerFilms[0]}
+                cardTwo={headerFilms[1]}
+                cardThree={headerFilms[2]}
+                description="Wanda Maximoff foi sequestrada
               da Sérvia e trazida para a Montanha Wundagore, 
               base do Alto Evolucionário. "
-              name="Wanda Maximoff"
-            />
-            <Apparitions data={aparitionsFilms} />
-            <CharactersComponent data={charactersFilms} />
-          </>
-        )}
+                name="Wanda Maximoff"
+              />
+              <Apparitions data={aparitionsFilms} />
+              <CharactersComponent data={charactersFilms} />
+            </>
+          )}
 
-        {active === "Films" && (
-          <>
-            <Header
-              title="Top 10 - Filmes Populares"
-              star={4}
-              cardOne={headerFilms2[0]}
-              cardTwo={headerFilms2[1]}
-              cardThree={headerFilms2[2]}
-              description="“O Visão” (The Vision em inglês) 
+          {active === "Films" && (
+            <>
+              <Header
+                title="Top 10 - Filmes Populares"
+                star={4}
+                cardOne={headerFilms2[0]}
+                cardTwo={headerFilms2[1]}
+                cardThree={headerFilms2[2]}
+                description="“O Visão” (The Vision em inglês) 
               é um super-herói fictício de quadrinhos americanos
               publicados pela Marvel Comics.. "
-              name="O Visão"
-            />
-            <Apparitions data={aparitionsFilms2} />
-            <CharactersComponent data={charactersFilms2} />
-          </>
-        )}
+                name="O Visão"
+              />
+              <Apparitions data={aparitionsFilms2} />
+              <CharactersComponent data={charactersFilms2} />
+            </>
+          )}
 
-        {active === "Comics" && (
-          <>
-            <Header
-              title="Top 10 - HQs Populares"
-              star={3}
-              cardOne={headerFilms3[0]}
-              cardTwo={headerFilms3[1]}
-              cardThree={headerFilms3[2]}
-              description="Galactus é uma das entidades mais
+          {active === "Comics" && (
+            <>
+              <Header
+                title="Top 10 - HQs Populares"
+                star={3}
+                cardOne={headerFilms3[0]}
+                cardTwo={headerFilms3[1]}
+                cardThree={headerFilms3[2]}
+                description="Galactus é uma das entidades mais
               poderosas e temidas do Universo Marvel. Não
               há quase nada na existência que ele não possa fazer ou realizar"
-              name="Galactus"
-            />
-            <Apparitions data={aparitionsFilms3} />
-            <CharactersComponent data={charactersFilms3} />
-          </>
-        )}
+                name="Galactus"
+              />
+              <Apparitions data={aparitionsFilms3} />
+              <CharactersComponent data={charactersFilms3} />
+            </>
+          )}
 
-      </SecondView>
+        </SecondView>
+      </View>
     </Background>
   );
 }
