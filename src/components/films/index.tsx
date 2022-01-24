@@ -64,6 +64,12 @@ export const TextDescription = styled.Text`
     left: 15px;
 `
 
+export const TextTitleModal = styled.Text`
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+`
+
 export const FirstView = styled.View`
     width: 10%;
     height: 100%;
