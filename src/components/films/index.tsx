@@ -44,11 +44,11 @@ export const Avaliation = styled.View`
     height: 60px; 
     background-color: black;
     position: absolute; 
-    margin-top: 165px; 
+    margin-top: 145px; 
     left: 140px;
     border: 2px; 
     border-color: red;
-    border-radius: 10px; 
+    border-radius: 15px; 
     justify-content: center;
     align-items: center;
     flex-direction: column;

@@ -70,7 +70,7 @@ function ThirdCard({ cardThree }: thirdCardProps) {
 
 export default function Header({ name, title, star, cardOne, cardTwo, cardThree, description }: HeaderProps) {
   return (
-    <View style={{ marginTop: 45}}>
+    <View style={{ marginStart: 15,marginTop: 45}}>
       <TextHeader>{title}</TextHeader>
       <View style={styles.header}>
         <Card cardOne={cardOne} name={name} />
