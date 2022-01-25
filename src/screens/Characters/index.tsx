@@ -29,7 +29,7 @@ export default function Characters() {
   return (
     <Background >
       <HeaderView>
-        <TouchableOpacity onPress={()=>Alert.alert("oi")}>
+        <TouchableOpacity onPress={()=>Alert.alert(":( Error")}>
           <Entypo name="menu" size={24} color="red" style={{ top: 25, margin: 24 }} />
         </TouchableOpacity>
       </HeaderView>

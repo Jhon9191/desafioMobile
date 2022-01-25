@@ -85,7 +85,7 @@ export const SecondView = styled.View`
     width: 90%;
     height: 90%;
     /* background-color: blue; */
-    justify-content: space-evenly;
+    justify-content:space-around;
     flex-direction: column;
     /* padding: 30px; */
     padding-left: 5px;
