@@ -20,7 +20,7 @@ export default function Apparitions({ data }: ApparitionsProps) {
                 horizontal
                 data={data}
                 renderItem={({ item }) => ((
-                    <SecondImage style={{ marginLeft: 3 }} source={{ uri: item }} />
+                    <SecondImage style={{ marginLeft: 3 }} source={{ uri: item.url }} />
                 ))}
             />
         </View>

@@ -1,5 +1,5 @@
 import { StyleSheet, TouchableOpacity, View, Alert } from 'react-native';
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   Background, FirstView, SecondView, HeaderView
 } from '../../components/films';
@@ -9,7 +9,7 @@ import { Context } from '../../Context/Context';
 import Apparitions from '../../components/films/Apparitions';
 import CharactersComponent from '../../components/films/Characteres';
 import { Entypo } from '@expo/vector-icons';
-
+import { Button, TextRed } from '../../components/input';
 export default function Characters() {
 
   const {
@@ -25,11 +25,10 @@ export default function Characters() {
     charactersFilms3,
   }: any = useContext(Context);
 
-
   return (
     <Background >
       <HeaderView>
-        <TouchableOpacity onPress={()=>Alert.alert(":( Error")}>
+        <TouchableOpacity onPress={() => Alert.alert(":( Error")}>
           <Entypo name="menu" size={24} color="red" style={{ top: 25, margin: 24 }} />
         </TouchableOpacity>
       </HeaderView>
@@ -43,14 +42,12 @@ export default function Characters() {
             <>
               <Header
                 title="Top 10 - Personagens Populares"
-                star={5}
-                cardOne={headerFilms[0]}
-                cardTwo={headerFilms[1]}
-                cardThree={headerFilms[2]}
-                description="Wanda Maximoff foi sequestrada
-              da Sérvia e trazida para a Montanha Wundagore, 
-              base do Alto Evolucionário. "
-                name="Wanda Maximoff"
+                star={headerFilms[0].score}
+                cardOne={headerFilms[0].url}
+                cardTwo={headerFilms[1].url}
+                cardThree={headerFilms[2].url}
+                description={headerFilms[0].description}
+                name={headerFilms[0].name}
               />
               <Apparitions data={aparitionsFilms} />
               <CharactersComponent data={charactersFilms} />
@@ -59,37 +56,33 @@ export default function Characters() {
 
           {active === "Films" && (
             <>
-              <Header
-                title="Top 10 - Filmes Populares"
-                star={4}
-                cardOne={headerFilms2[0]}
-                cardTwo={headerFilms2[1]}
-                cardThree={headerFilms2[2]}
-                description="“O Visão” (The Vision em inglês) 
-              é um super-herói fictício de quadrinhos americanos
-              publicados pela Marvel Comics.. "
-                name="O Visão"
+               <Header
+                title="Top 10 - Personagens Populares"
+                star={headerFilms[1].score}
+                cardOne={headerFilms[1].url}
+                cardTwo={headerFilms[0].url}
+                cardThree={headerFilms[2].url}
+                description={headerFilms[1].description}
+                name={headerFilms[1].name}
               />
-              <Apparitions data={aparitionsFilms2} />
-              <CharactersComponent data={charactersFilms2} />
+              <Apparitions data={aparitionsFilms} />
+              <CharactersComponent data={charactersFilms} />
             </>
           )}
 
           {active === "Comics" && (
             <>
-              <Header
-                title="Top 10 - HQs Populares"
-                star={3}
-                cardOne={headerFilms3[0]}
-                cardTwo={headerFilms3[1]}
-                cardThree={headerFilms3[2]}
-                description="Galactus é uma das entidades mais
-              poderosas e temidas do Universo Marvel. Não
-              há quase nada na existência que ele não possa fazer ou realizar"
-                name="Galactus"
+               <Header
+                title="Top 10 - Personagens Populares"
+                star={headerFilms[2].score}
+                cardOne={headerFilms[2].url}
+                cardTwo={headerFilms[1].url}
+                cardThree={headerFilms[0].url}
+                description={headerFilms[2].description}
+                name={headerFilms[2].name}
               />
-              <Apparitions data={aparitionsFilms3} />
-              <CharactersComponent data={charactersFilms3} />
+              <Apparitions data={aparitionsFilms} />
+              <CharactersComponent data={charactersFilms} />
             </>
           )}
 

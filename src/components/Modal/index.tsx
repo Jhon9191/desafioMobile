@@ -32,8 +32,11 @@ export default function ModalComponent({ data }: any) {
       { scaleX: scale },
       { scaleY: scale },
     ],
-    opacity,
-    backgroundColor: '#000', borderRadius: 30, width: '45%', height: 244, margin: 10
+    borderRadius: 30,
+    width: 150,
+    height: 230,
+    margin: 10,
+    alignItems: 'center'
   }
 
   const animation = Animated.parallel([
@@ -115,7 +118,9 @@ export default function ModalComponent({ data }: any) {
               <View style={styles.containerFilm}>
                 <Image source={{ uri: item.url}} style={{width: '100%', height: '100%', borderRadius:30}}/>
                 <LinearGradient colors={['red', 'transparent']} style={styles.linear}>
-                  <Text style={{color: 'white'}}>{item.name}</Text>
+                  <Text style={{color: 'white', fontSize: 12}}>{item.name}</Text>
+                  <Text style={{color: 'white', fontSize: 12}}></Text>
+                  <Text style={{color: 'white', fontSize: 12}}>{item.name}</Text>
                 </LinearGradient>
               </View>
             )}
@@ -138,12 +143,14 @@ const styles = StyleSheet.create({
 
   linear: {
     width: 150,
-    height: 69,
+    height: 115,
     borderRadius: 25,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'space-around',
+    flexDirection: 'column',
     position: 'absolute',
-    top: '70%' 
+    top: '50%' ,
+    padding: 3
   },
   modal: {
     backgroundColor: '#000',

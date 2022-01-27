@@ -28,7 +28,7 @@ export default function Characters({ data }: ApparitionsProps) {
             <ListInLine
                 horizontal
                 data={data}
-                keyExtractor={(item: any) => String(item)}
+                // keyExtractor={(item: any) => String(item)}
                 showsHorizontalScrollIndicator={false}
                 renderItem={({ item }) => ((
                     <View style={{ alignItems: 'center' }}>

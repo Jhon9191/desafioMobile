@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
     container: {
         transform: [{ rotate: '90deg' }],
         flexDirection: 'row',
-        marginTop: 150
+        marginTop: 130
     },
     ViewLinear: {
         width: 100,
